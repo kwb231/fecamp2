@@ -1,0 +1,9 @@
+ /* id 선택시 #사용, class 선택시 .사용              */
+.container{
+	max-width: 960px;
+	background: silver;
+	margin: 0 auto; 
+	/* 상 우 하 좌 시계방항으로 돌아감 0 auto 0 auto의 줄임말*/
+
+}
+.header>h1{

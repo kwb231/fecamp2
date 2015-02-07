@@ -3,9 +3,81 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=2,user-scalable-no"> -->
+	<!-- Initial scale: default is 1, 확대/축소 배수, user-scalable - yes or no (No일 경우 전 모든 것을 무효화) -->
 	<title>HTML5</title>
+	<link rel="stylesheet" href="default.css">
+	<!-- <style> -->
+		<!-- {background:red} -->
+		<!-- embedded 스타일은 head에만 작성가능 -->
+	</style>
 </head>
 <body>
-	<p lang="en" title="World Wide Web Consortium">W3C</p>
+	<div class="container">
+		<a href="#main">메뉴건너뛰기</a>
+		<header class="header">
+			<h1>HTML5</h1>
+			<nav class="gnb">
+				<h2>메인 메뉴</h2>
+				<ul>
+					<li>
+						<a href="#">메뉴 1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1</a></li>
+							<li><a href="#">메뉴 1-2</a></li>
+							<li><a href="#">메뉴 1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 2</a>
+						<ul>
+							<li><a href="#">메뉴 2-1</a></li>
+							<li><a href="#">메뉴 2-2</a></li>
+							<li><a href="#">메뉴 2-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 3</a>
+						<ul>
+							<li><a href="#">메뉴 3-1</a></li>
+							<li><a href="#">메뉴 3-2</a></li>
+							<li><a href="#">메뉴 3-3</a></li>
+					</li>
+					<!-- 적어도 하나의 li가 필요 -->
+				</ul>
+			</nav>
+				<!-- 비순차 unordered list -->
+			<form class="search">
+				<input type="search" required>
+				<input type="submit" value="검색">
+			</form>
+		</header>
+		<div class="body">
+			<main id="main">
+				#main
+			</main>
+			<nav class"lnb">
+				<h2>메뉴 1</h2>
+				<ul>
+					<li><a href="#">메뉴 1-1</a></li>
+					<li><a href="#">메뉴 1-2</a></li>
+					<li><a href="#">메뉴 1-3</a></li>
+				</ul>
+			</nav>
+			<aside class"aside">
+				<h2>바로가기</h2>
+				<ul>
+					<li><a href="#">참고링크 1</a></li>
+					<li><a href="#">참고링크 2</a></li>
+					<li><a href="#">참고링크 3</a></li>
+				</ul>
+			</aside>
+		</div>
+		<footer class="footer">
+			<p>Copyright &copy FE.CAMP. All rights reserved.</p>
+		</footer>
+	</div>
+	<!-- <p lang="en" title="World Wide Web Consortium">W3C</p> -->
+	<!-- <p style="background:yellow;text-decoration:underline">Hello World!</p> -->
+	<!-- p는 block element 강제 줄바꿈 -->
+	<!-- 우선순위 in-line 스타일> embedded 스타일> external 스타일 -->
 </body>
 </html>

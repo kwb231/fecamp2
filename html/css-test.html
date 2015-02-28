@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta lang="kor">
+<meta charset="utf-8">
+<html>
+<head>
+	<title>CSS test</title>
+	<style>
+	.parent{
+		background: #ccc;
+		margin-top: 100px;
+
+	}
+
+	.a{
+		background: #f00;
+		margin-top: 50px;
+	}
+	/*.parent{
+		background: #000;
+	}
+	.parent:after{
+		content: 'Hello World!';
+		color: #fff;
+		clear: both;
+		display: block;
+	}
+	.a{
+		background: #f00;
+		float: left;
+		width: 100px;
+		height: 100px;
+	}
+	.b{
+		background: #00f;
+		width: 100px;
+		height: 100px;
+		float: left;
+	}*/
+
+/*	.po{
+		background: silver;
+
+	}
+	.static{
+		position: static;
+		top: 100px;
+		left: 200px;
+		/*static일 경우 top left 와 같은 것인 적용 안됨, 주변이 밀어야만 밀림*/
+/*	}.relative{
+		position: relative;
+		top: 100px;
+		left: 100px;
+		/*offset 기준점이 자기가 원래 있던 위치*/
+/*	}.absolute{
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		/*offset 기준점은 포지션이 static이 아닌 부모요소*/
+/*	}.fixed{
+		position: fixed;
+		bottom: 100px;
+		right: 100px;
+		/*offset 기준점은 viewport 가장자리 임*/
+	/*.inline,*/
+	/*.block{*/
+		/*width: 100px;*/
+		/*height: 100px;*/
+		/*display: inline-block;*/
+	/*inline 요소는 width, height, 수직 마진/패딩이 적용안됨*/
+	/*}*/
+	/*.inline{*/
+		/*background: red;*/
+	/*}*/
+	/*.block{*/
+		/*background: blue;*/
+	/*}*/
+		/*display: block;*/
+		/*border: 10px solid #000;*/
+		/*padding: 10px;*/
+		/*margin: 10px;*/
+		/*패딩은 보더 안, 마진은 보더 밖*/
+		/*인라인에 적용된 패딩/마진은 다른 element를 밀어내지 못함 고로 인라인 요소에는 사실상 수직 패딩은 의미없다*/
+		/*수직 마진 중첩 현상 (수직 마진은 중첩됨, 절대 값이 큰것으로 적용 됨) 양수-양수 혹은 음수-음수 경우, 양수-음수는 합*/
+	/*}*/
+	</style>
+</head>
+<body>
+	<div class="parent">
+	<div class ="a">a</div>
+	<div class="b">b</div>
+	</div>
+<!-- 	<span class="po static">static</span>
+	<span class="po relative">relative</span>.
+	<div style="position:relative; top:50px; background: red; height: 50px;">
+		<span class="po absolute">absolute</span>	
+	</div>
+	<span class="po fixed">fixed</span> -->
+	<!-- <span class="inline" style=" font-size: 16px; vertical-align: top; text-align: center; line-height: 100px">inline</span> -->
+	<!-- <span class="block">block</span> -->
+	<!-- 글자를 수직 가운데로 오게 하려면 line-height을 박스 크기와 같게, 수평 중간은 text-align: center (inline만) -->
+	<!-- <span style="margin-bottom:20px">span</span> -->
+	<!-- <span>span</span> -->
+	<!-- <div style="border:10px solid #00f">...</div> -->
+</body>
+</html>

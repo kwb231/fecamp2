@@ -1,9 +1,284 @@
  /* id 선택시 #사용, class 선택시 .사용              */
-@charset "utf-8"
+@charset "utf-8";
+/* html reset */
+header, 
+footer, 
+section, 
+article, 
+nav, 
+aside, 
+figure,
+main,
+figcaption{
+	display: block;	
+}
+
+html,
+body{
+	min-height: 100%;
+}
+
+body{
+	margin: 0;
+	min-width: 320px;
+}
+
+body, 
+table, 
+button, 
+input, 
+textarea, 
+select{
+	font-size: 14px;
+}
+
+/* All */
+body{
+	background: -webkit-linear-gradient(#ccc, #fff);
+	background: -moz-linear-gradient(#ccc, #fff);
+	background: -ms-linear-gradient(#ccc, #fff);
+	background: -o-linear-gradient(#ccc, #fff);
+	background: linear-gradient( #ccc, #fff);
+}
+.header>h1{
+	font-size: 28px;
+	text-shadow: 1px 1px 0 #fff;
+	/*text-shadow: x y blur color*/
+}
+
+.search>input{
+	vertical-align: top;
+	border-radius: 3px;
+}
+
+.search>[type="search"]{
+	border: 1px solid #ccc;
+	height: 32px;
+	width: 160px;
+	box-shadow: 0 0 4px #bbb inset;
+}
+
+.search>[type="submit"]{
+	width: 50px;
+	height: 32px;
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 4px #aaa;
+}
+
+main{
+		background: #fff;
+		box-shadow: 0 0 4px #999;
+		box-shadow: 0 0 4px rgba(0,0,0,.3);
+		border-radius: 8px;
+		min-height: 300px;
+}
+
+main,
+.lnb,
+.aside{
+	margin-bottom: 15px;
+}
+
+.lnb ul,
+.aside ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.lnb{
+	text-shadow: 1px 1px 0 #333;
+}
+
+.lnb h2{
+	background: #666;
+	border-radius: 4px 4px 0 0;
+	font-size: 14px;
+	color: #fff;
+	padding: 0 10px;
+	height: 32px;
+	line-height: 35px;
+	margin: 0;
+}
+
+
+/*margin을 0으로 잡아줘야지 user agent stylesheet 마진이 없어짐*/
+/*liststyle ctrl space 눌러 무엇이 가능한지 확인*/
+
+.lnb li{
+	margin: 1px 0;
+}
+
+.lnb a{
+	display: block;
+	background: #777;
+	padding: 0 10px;
+	height: 32px;
+	line-height: 35px;
+	text-decoration: none;
+	color: #fff;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+.lnb :last-child>a{
+	border-radius: 0 0 4px 4px;
+}
+/*li의 마지막 child의 child인 a를 선택*/
+
+.lnb a:focus,
+.lnb a:hover{
+	background: #555;
+}
+
+.aside{
+	border:1px solid #ddd;
+	border-radius: 4px;
+	padding: 0 10px;
+}
+/*border 값을 정해주지 않으면 텍스트 글꼴 색상을 물려받는다*/
+/*padding을 넣으면 박스 사이즈가 그만큼 커짐*/
+
+.aside h2{
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	height: 32px;
+	line-height: 35px;
+}
+
+.aside ul{
+	padding: 10px 0;
+}
+
+.aside a{
+	display: block;
+	height: 32px;
+	line-height: 35px;
+	text-decoration: none;
+
+}
+
+.footer{
+	border-top: 1px dotted #ccc;
+}
+
+.footer>p{
+	text-align: center;
+	color: #666;
+}
+
+/* Mobile */
 .container{
-	max-width: 960px;
-	background: silver;
-	margin: 0 auto; 
-	/* 상 우 하 좌 시계방항으로 돌아감 0 auto 0 auto의 줄임말*/
+	margin: 10px;
+}
+
+.skip{
+	display: none
+}
+
+.gnb>h2{
+	height: 1px;
+	position: absolute;
+	overflow: hidden;
+	margin: 0;
+}
+
+.gnb>button{
+	border: 0;
+	background: #666; /*background: #666 url(xxx.png) no-repeat*/
+	width: 40px;
+	height: 3px;
+	padding: 36px 0 0 0;
+	overflow: hidden;
+	/*padding을 36으로했기에 텍스트가 안보임. 어떤 브라우저에는 보이기에 overflow hidden은 넣어줘야 함.
+	 버튼 element에는 padding과 height 중 큰걸로 적용 됨(box-sizing이 border-box이기 때문*/
+	border-radius: 3px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.gnb>button:before{
+	content: "";
+	position: absolute;
+	/*button의 position이 relative여야지만 버튼을 기준으로 표기됨*/
+	top: 4px;
+	left: 4px;
+	width: 32px;
+	height: 4px;
+	border-top: 12px double #fff;
+	border-bottom: 12px double #fff;
+	cursor: pointer;
+}
+
+.gnb ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gnb>ul{
+	background: #666;
+	border-radius: 4px;
+	overflow: hidden;
+	display: none;
+}
+
+.gnb a{
+	display: block;
+	background: #666;
+	color: #fff;
+	line-height: 32px;
+	text-decoration: none;
+	padding: 0 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.gnb>ul>li>a{
+	background: #444
+}
+
+.gnb li li{
+	border-top: 1px dotted #444;
+}
+
+.gnb li li:first-child{
+	border: 0;
+}
+
+.search{
+	margin: 15px 0;
+	padding: 0 60px 0 0;
+	position: relative;
+}
+.search>[type="search"]{
+	display: block;
+	width: 100%;
+
+}.search>[type="submit"]{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+}
+
+/* Tablet & Desktop */
+@media all and (min-width: 768px){
+
+}
+
+/* Tablet */
+@media all and (min-width: 768px) and (max-width: 1024px){
+
+}
+
+/* Desktop */
+@media all and (min-width: 1025px){
 
 }

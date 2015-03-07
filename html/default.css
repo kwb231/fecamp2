@@ -30,6 +30,7 @@ input,
 textarea, 
 select{
 	font-size: 14px;
+	font-family: sans-serif;
 }
 
 img,
@@ -55,7 +56,7 @@ video{
 
 /* All */
 @font-face {
-  font-family: 'Nanum Gothic';
+  font-family: NG;
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
@@ -76,6 +77,10 @@ body{
 	font-size: 28px;
 	text-shadow: 1px 1px 0 #fff;
 	/*text-shadow: x y blur color*/
+}
+
+.gnb *{
+	box-sizing:content-box;
 }
 
 .search>input{
@@ -175,6 +180,7 @@ main,
 	border-radius: 4px;
 	padding: 0 10px;
 	background: #fff;
+	box-sizing: content-box;
 }
 /*border 값을 정해주지 않으면 텍스트 글꼴 색상을 물려받는다*/
 /*padding을 넣으면 박스 사이즈가 그만큼 커짐*/
@@ -215,7 +221,6 @@ main,
 .table{
 	/*border: 1px solid #ccc;*/
 	border-collapse: collapse;
-	font-family: calibri;
 }
 
 .table td,
@@ -230,13 +235,22 @@ main,
 	width: 14%;
 }
 
+.sign-up dt{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.sign-up input+label{
+	margin-right: 20px;
+}
+
 .table thead th{
 	background: #eee;
 	border-top: 2px solid #bbb;
 }
 
 /* Mobile */
-.container{
+.ctnr{
 	margin: 10px;
 }
 
@@ -249,6 +263,7 @@ main,
 	position: absolute;
 	overflow: hidden;
 	margin: 0;
+	opacity: 0;
 }
 
 .gnb>button{
@@ -264,6 +279,7 @@ main,
 	position: absolute;
 	top: 15px;
 	right: 15px;
+	box-sizing: border-box;
 }
 
 .gnb>button:before{
@@ -277,6 +293,7 @@ main,
 	border-top: 12px double #fff;
 	border-bottom: 12px double #fff;
 	cursor: pointer;
+	box-sizing: content-box;
 }
 
 .gnb ul{
@@ -326,7 +343,8 @@ main,
 	display: block;
 	width: 100%;
 
-}.search>[type="submit"]{
+}
+.search>[type="submit"]{
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -336,18 +354,27 @@ main,
 /* Tablet & Desktop */
 @media all and (min-width: 768px){
 
+	body, 
+	table, 
+	button, 
+	input, 
+	textarea, 
+	select{
+		font-family: NG;
+	}
+
 	.gnb>button{
 		display:none; 
 	}
 
-	.container{
+	.ctnr{
 		position: relative;
 	}
 
 	.search{
 		position: absolute;
-		top: 10px;
-		right: 10px;
+		top: 0px;
+		right: 0px;
 		margin: 0;
 		width: 200px
 	}
@@ -473,6 +500,7 @@ main,
 		float: left;
 		width: 200px;
 		right: 220px
+
 	}
 	.aside{
 		float: right;
@@ -480,7 +508,7 @@ main,
 		left: 200px;
 	}
 
-	.container{
+	.ctnr{
 		max-width: 1280px;
 		margin: 0 auto;
 		padding: 0 10px;

@@ -7,6 +7,7 @@
 	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=2,user-scalable-no"> -->
 	<!-- Initial scale: default is 1, 확대/축소 배수, user-scalable - yes or no (No일 경우 전 모든 것을 무효화) -->
 	<title>HTML5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="default.css">
 	<!-- <style> -->
 		<!-- {background:red} -->
@@ -17,7 +18,7 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="container">
+	<div class="ctnr">
 		<a href="#main" class="skip">메뉴건너뛰기</a>
 		<header class="header">
 			<h1>HTML5</h1>
@@ -128,7 +129,70 @@
 				        </tbody>
 				      </table>
 				    </div>
-				    <p>동해물과 백두산이 마르고 닳도록</p>
+				    <h1 hidden>나눔 고딕 테스트</h1>
+				    <p hidden>동해물과 백두산이 마르고 닳도록</p>
+				    <form class="sign-up">
+				    	<fieldset>
+				    		<legend>회원 가입(필수)</legend>
+				    		<div class="form-group">
+					    		<label for="email">이메일</label>
+					    		<input type="email" class="form-control" id="email" required placeholder="acb@abc.com">
+				    		</div>
+				    		<div class="form-group">
+					    		<label for="pw1">비밀번호</label>
+					    		<input type="password" class="form-control" id="pw1" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    		<div class="form-group">
+					    		<label for="pw2">비밀번호 확인</label>
+					    		<input type="password" class="form-control" id="pw2" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    	</fieldset>
+				    	<fieldset>
+				    		<legend>추가 입력 사항 (옵션)</legend>
+				    		<dl>
+				    			<dt>성별</dt>
+				    			<dd>
+				    				<input type="radio" id="male" name="gender">
+				    				<label for="male">남성</label>
+				    				<input type="radio" id="female" name="gender">
+				    				<label for="female">여성</label>
+				    			</dd>
+				    			<dt>취미</dt>
+				    			<dd>
+				    				<input type="checkbox" id="book">
+				    				<label for="book">독서</label>
+				    				<input type="checkbox" id="football">
+				    				<label for="football">축구</label>
+				    				<input type="checkbox" id="bike">
+				    				<label for="bike">자전거</label>
+				    			</dd>
+				    		</dl>
+				    	</fieldset>
+				    	<button type="submit">확인</button>
+				    </form>
+				    <!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+					  Launch demo modal
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 				</article>
 			</main>
 			<nav class="lnb">
@@ -150,7 +214,7 @@
 			</aside>
 		</div>
 		<footer class="footer">
-			<p>Copyright &copy FE.CAMP. All rights reserved.</p>
+			<p>Copyright &copy; FE.CAMP. All rights reserved.</p>
 		</footer>
 	</div>
 	<!-- <p lang="en" title="World Wide Web Consortium">W3C</p> -->
@@ -158,6 +222,7 @@
 	<!-- p는 block element 강제 줄바꿈 -->
 	<!-- 우선순위 in-line 스타일> embedded 스타일> external 스타일 -->
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="default.js"></script>
 </body>
 </html>

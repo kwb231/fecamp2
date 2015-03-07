@@ -32,7 +32,39 @@ select{
 	font-size: 14px;
 }
 
+img,
+video{
+		max-width: 100%;
+		height: auto;
+}
+
+.vframe{
+	max-width: 100%;
+	height: 0;
+	padding-top: 56.25%;
+	position: relative;
+}
+
+.vframe>iframe{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
 /* All */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+
 body{
 	background: -webkit-linear-gradient(#ccc, #fff);
 	background: -moz-linear-gradient(#ccc, #fff);
@@ -72,6 +104,10 @@ main{
 		box-shadow: 0 0 4px rgba(0,0,0,.3);
 		border-radius: 8px;
 		min-height: 300px;
+}
+
+main>article{
+	padding: 15px;
 }
 
 main,
@@ -138,6 +174,7 @@ main,
 	border:1px solid #ddd;
 	border-radius: 4px;
 	padding: 0 10px;
+	background: #fff;
 }
 /*border 값을 정해주지 않으면 텍스트 글꼴 색상을 물려받는다*/
 /*padding을 넣으면 박스 사이즈가 그만큼 커짐*/
@@ -169,6 +206,33 @@ main,
 .footer>p{
 	text-align: center;
 	color: #666;
+}
+
+.table-rwd{
+	overflow: auto;
+}
+
+.table{
+	/*border: 1px solid #ccc;*/
+	border-collapse: collapse;
+	font-family: calibri;
+}
+
+.table td,
+.table th{
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+	text-align: center;
+}
+
+.table td{
+	vertical-align: top;
+	width: 14%;
+}
+
+.table thead th{
+	background: #eee;
+	border-top: 2px solid #bbb;
 }
 
 /* Mobile */
@@ -219,6 +283,7 @@ main,
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	overflow: visible !important;
 }
 
 .gnb>ul{
@@ -271,14 +336,152 @@ main,
 /* Tablet & Desktop */
 @media all and (min-width: 768px){
 
+	.gnb>button{
+		display:none; 
+	}
+
+	.container{
+		position: relative;
+	}
+
+	.search{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		margin: 0;
+		width: 200px
+	}
+
+	.gnb{
+		margin-bottom: 15px;
+		position: relative;
+	}
+
+	.gnb>ul{
+		display: block !important;
+		height: 40px;
+		border-bottom: 40px solid #fff;
+		background: -webkit-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -moz-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -ms-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -o-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		padding: 0 0 0 25px;
+	}
+
+	.gnb ul ul{
+		display: none;
+		left: 20px;
+	}
+
+	.gnb>ul>li{
+		float: left;
+	}
+
+	.gnb a{
+		background: none !important;
+	}
+
+	.gnb>ul>li>a{
+		height: 40px;
+		line-height: 44px;
+		padding: 0 25px;
+	}
+
+	.gnb>ul>.active>a{
+		background: #fff !important;
+		color: #000;
+		font-weight: 700;
+		margin-top: 4px;
+		line-height: 38px;
+		border-radius: 4px 4px 0 0;
+	}
+	.gnb>ul>.active>ul{
+		display: block;
+	}
+
+	.gnb ul ul{
+		position: absolute;
+	}
+
+	.gnb ul ul li:nth-child(3)>a{
+		left: 100px;
+	}
+
+
+	.gnb li li{
+		border: 0;
+		display: inline-block;
+	}
+
+	.gnb li li>a{
+		color: #666;
+		padding: 0 0 0 25px;
+		line-height: 40px;
+
+	}
+
+	.body:after{
+		content: "";
+		display: block;
+		clear: both;
+	/*clear both로 인해 float을 해제 시켜 향후에 바디 백그라운드 혹은 보더를 넣기 좋게 함*/
+	/*clear both는 인라인에는 먹지 않기 때문에 블럭처리를 함*/
+	}
 }
 
 /* Tablet */
 @media all and (min-width: 768px) and (max-width: 1024px){
 
+	.body{
+		padding-right: 200px;
+	}
+
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -180px;
+	}
+	.lnb,
+	.aside{
+		float: right;
+		width: 180px;
+		box-sizing: border-box;
+		position: relative;
+		left: 200px;
+	}
 }
 
 /* Desktop */
 @media all and (min-width: 1025px){
+	.body{
+		padding: 0 200px 0 220px;
+	}
 
-}
+	main{
+		width: 100%;
+		float: left;
+		margin-right: -100%;
+	}
+
+	.lnb,
+	.aside{
+		position: relative;
+	}
+
+	.lnb{
+		float: left;
+		width: 200px;
+		right: 220px
+	}
+	.aside{
+		float: right;
+		width: 158px;
+		left: 200px;
+	}
+
+	.container{
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}

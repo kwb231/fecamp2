@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///Users/Kwon/Desktop/fecamp2/js/day6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>15:16:05</title>
+	<link rel="stylesheet" type="text/css" href="./15 16 02_files/style.css">
+	<link rel="stylesheet" type="text/css" href="./15 16 02_files/prism.css">
+	<script src="./15 16 02_files/day6.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+    <div id="box"><table><tbody><tr><th>2단</th><th>4단</th><th>5단</th><th>6단</th><th>7단</th><th>8단</th><th>9단</th></tr><tr><td>2 x 1 = 2</td><td>4 x 1 = 4</td><td>5 x 1 = 5</td><td>6 x 1 = 6</td><td>7 x 1 = 7</td><td>8 x 1 = 8</td><td>9 x 1 = 9</td></tr><tr><td>2 x 2 = 4</td><td>4 x 2 = 8</td><td>5 x 2 = 10</td><td>6 x 2 = 12</td><td>7 x 2 = 14</td><td>8 x 2 = 16</td><td>9 x 2 = 18</td></tr><tr><td>2 x 4 = 8</td><td>4 x 4 = 16</td><td>5 x 4 = 20</td><td>6 x 4 = 24</td><td>7 x 4 = 28</td><td>8 x 4 = 32</td><td>9 x 4 = 36</td></tr><tr><td>2 x 5 = 10</td><td>4 x 5 = 20</td><td>5 x 5 = 25</td><td>6 x 5 = 30</td><td>7 x 5 = 35</td><td>8 x 5 = 40</td><td>9 x 5 = 45</td></tr><tr><td>2 x 6 = 12</td><td>4 x 6 = 24</td><td>5 x 6 = 30</td><td>6 x 6 = 36</td><td>7 x 6 = 42</td><td>8 x 6 = 48</td><td>9 x 6 = 54</td></tr><tr><td>2 x 7 = 14</td><td>4 x 7 = 28</td><td>5 x 7 = 35</td><td>6 x 7 = 42</td><td>7 x 7 = 49</td><td>8 x 7 = 56</td><td>9 x 7 = 63</td></tr><tr><td>2 x 8 = 16</td><td>4 x 8 = 32</td><td>5 x 8 = 40</td><td>6 x 8 = 48</td><td>7 x 8 = 56</td><td>8 x 8 = 64</td><td>9 x 8 = 72</td></tr><tr><td>2 x 9 = 18</td><td>4 x 9 = 36</td><td>5 x 9 = 45</td><td>6 x 9 = 54</td><td>7 x 9 = 63</td><td>8 x 9 = 72</td><td>9 x 9 = 81</td></tr></tbody></table></div>
+<!--
+    <table>
+        <tr><td>2단</td><td>3단</td><td>4단</td><td>5단</td><td>6단</td><td>7단</td><td>8단</td><td>9단</td></tr>
+        <tr>
+            <td>21</td>
+            <td>31</td>
+            <td>41</td>
+            <td>51</td>
+            <td>61</td>
+            <td>71</td>
+            <td>81</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>32</td>
+            <td>42</td>
+            <td>52</td>
+            <td>62</td>
+            <td>72</td>
+            <td>82</td>
+            <td>92</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>            
+            <td>25</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>            
+            <td>27</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>    
+        <tr>            
+            <td>28</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>            
+            <td>29</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+-->
+        
+	<h2>반복문</h2>
+	<h3><code>for</code></h3>
+	<p>주로 반복 횟수가 정해져 있을 때 사용하는 반복문. 조건식을 만족하는 한 계속 반복한다.</p>
+	<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span>초기식<span class="token punctuation">;</span> 조건식<span class="token punctuation">;</span> 증감식<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment" spellcheck="true">// 반복할 코드</span>
+<span class="token punctuation">}</span></code></pre>
+	<p>이를 그림으로 나타내면 다음과 같다.</p>
+	<figure>
+		<img src="./15 16 02_files/for.png" width="330">
+		<figurecaption>for 반복문의 실행 구조</figurecaption>
+	</figure>
+
+	<h3><code>while</code></h3>
+	<p>주로 반복 횟수가 명확하지 않을 때 사용하는 반복문.</p>
+	<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">while</span> <span class="token punctuation">(</span>조건식<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment" spellcheck="true">// 반복할 코드</span>
+<span class="token punctuation">}</span></code></pre>
+	<p>이를 그림으로 나타내면 다음과 같다.</p>
+	<figure>
+		<img src="./15 16 02_files/while.png" width="272">
+		<figurecaption>while 반복문의 실행 구조</figurecaption>
+	</figure>
+
+	<h2>내장 타입의 생성자</h2>
+	<p>배열, 문자열, 숫자 등은 각기 해당하는 생성자(constructor)가 있습니다.</p>
+
+	<h2>내장 객체 확장</h2>
+	<p><code>prototype</code>를 사용하면 내장 객체의 기능을 확장할 수 있습니다.</p>
+
+	<h2>사용자정의 타입 작성</h2>
+	<p>지금까지 배운 생성자(constructor)와 <code>prototype</code>를 사용하면 자신만의 타입을 작성할 수 있습니다. 이는 다른 언어의 클래스(class)에 해당하는 기능입니다.</p>
+
+
+    
+<script src="./15 16 02_files/prism.js"></script>
+
+</body></html>

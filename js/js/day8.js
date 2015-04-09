@@ -10,4 +10,44 @@ var regex = /\d+(\-\d+)+/g;
 console.log(str3.replace(regex, '<em>$&</em>'));
 
 var regex = /<(\/?)p>/g;
-console.log( str3.replace(regex, '<$1div>'))
+console.log( str3.replace(regex, '<$1div>'));
+
+
+//var elems = document.querySelectorAll('h2');
+//for (i=0; i< elems.length; i++) {
+//    elems[i].addEventListener('click', function(event){
+//        console.log(event);
+//        event.stopPropagation();
+//        alert(this.innerHTML)
+//    });
+//}
+
+//var body = document.querySelector('body');
+//body.addEventListener('click', function(event){
+//    alert('click')
+//})
+
+// jQuery는 크게 두단계로 사용된다.
+// 1. 원하는 엘리먼트를 선탁하고
+//jQuery('p')
+// 2. 원하는 기능을 사용한다.
+jQuery(function($){ // 문서를 모두 읽어들인 다음에 코드를 실행한다.
+    var codeColor = $('p code').css('color');
+    console.log(codeColor);
+    
+    $('#box').on('click', function(event){
+        event.shiftKey; // 시프트 키가 눌렸는지 안눌렸는지 체크하는 프로퍼티
+        //문제 : 시프트키를 누르고 클릭하면 가로/세로가 10픽셀씩 줄어들고
+        //시프트키를 누르지 않고 클릭하면 가로/세로가 10픽셀씩 증가하는 코드를 작성하라
+        var width = $(this).width();
+        var height = $(this).height();
+        if (event.shiftKey) {
+            $(this).width(width-10)
+            $(this).height(height-10)
+        } else {    
+            $(this).width(width+10)
+            $(this).height(height+10)
+        }
+    });
+});
+jQuery.noConflict(); // 다른 라이브러리와 $ 변수의 충돌을 일으키지 않는다.
